@@ -1,19 +1,14 @@
 #include <iostream>
-#include <set>
+#include <cctype> // For toupper()
 using namespace std;
 
 int main() {
-    string username;
-    cin >> username;
+    string word;
+    cin >> word;
 
-    set<char> unique_chars(username.begin(), username.end()); // Store unique characters
+    word[0] = toupper(word[0]); // Convert first letter to uppercase
 
-    // Check if the count is even or odd
-    if (unique_chars.size() % 2 == 0) {
-        cout << "CHAT WITH HER!" << endl;
-    } else {
-        cout << "IGNORE HIM!" << endl;
-    }
+    cout << word << endl;
 
     return 0;
 }
