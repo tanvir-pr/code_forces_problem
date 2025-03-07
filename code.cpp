@@ -1,14 +1,17 @@
 #include <iostream>
-#include <cctype> // For toupper()
 using namespace std;
 
 int main() {
-    string word;
-    cin >> word;
+    int a, b;
+    cin >> a >> b;
 
-    word[0] = toupper(word[0]); // Convert first letter to uppercase
+    int years = 0;
+    while (a <= b) {
+        a *= 3;  // Limak's weight triples
+        b *= 2;  // Bob's weight doubles
+        years++;
+    }
 
-    cout << word << endl;
-
+    cout << years << endl;
     return 0;
 }
