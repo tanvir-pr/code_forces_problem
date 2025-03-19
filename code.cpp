@@ -2,16 +2,17 @@
 using namespace std;
 
 int main() {
-    int a, b;
-    cin >> a >> b;
+    int n;
+    string s;
+    cin >> n >> s;
 
-    int years = 0;
-    while (a <= b) {
-        a *= 3;  // Limak's weight triples
-        b *= 2;  // Bob's weight doubles
-        years++;
+    int removals = 0;
+    for (int i = 1; i < n; i++) {
+        if (s[i] == s[i - 1]) { 
+            removals++;  // Remove the duplicate stone
+        }
     }
 
-    cout << years << endl;
+    cout << removals << endl;
     return 0;
 }
